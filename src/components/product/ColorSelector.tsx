@@ -44,7 +44,7 @@ export default function ColorSelector({
               selectedColorName === color.name
                 ? "ring-2 ring-offset-2 ring-primary shadow-md"
                 : "border-border",
-              color.className // This applies the background color
+              color.className 
             )}
             style={{ backgroundColor: color.hex !== 'className' ? color.hex : undefined }}
           >
@@ -57,7 +57,7 @@ export default function ColorSelector({
               <Check
                 className={cn(
                   "w-5 h-5",
-                  // Determine check color based on swatch brightness
+               
                   (color.hex === '#FFFFFF' || color.hex.toLowerCase() === '#ffffff' || color.className.includes('white') || color.className.includes('light')) && !color.className.includes('dark')
                     ? "text-black"
                     : "text-white"
