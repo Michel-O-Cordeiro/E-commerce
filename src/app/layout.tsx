@@ -20,9 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={inter.variable} suppressHydrationWarning>
-      <body className={cn(
-        "min-h-screen bg-background font-sans antialiased" // font-sans will now use the CSS var via Tailwind config
-      )}>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased" // font-sans will now use the CSS var via Tailwind config
+        )}
+        suppressHydrationWarning // Added to specifically address body class mismatches
+      >
         {children}
       </body>
     </html>
