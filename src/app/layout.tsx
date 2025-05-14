@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'ShopWave Product Showcase',
+  title: 'E-commerce',
   description: 'Detailed product page for ShopWave e-commerce platform.',
 };
 
