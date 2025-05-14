@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { ProductImage } from "@/lib/types";
@@ -21,7 +22,7 @@ export default function ImageGallery({
   return (
     <div className="w-full flex flex-col items-center gap-4">
       {/* Main Image Section - centered and 30% width on medium+ screens */}
-      <div className="w-full md:w-[30%]">
+      <div className="w-full md:w-[30%] mx-auto">
         <Card className="overflow-hidden shadow-lg w-full">
           <CardContent className="p-0">
             <div className="aspect-square relative w-full">
@@ -39,28 +40,37 @@ export default function ImageGallery({
         </Card>
       </div>
 
-      {/* Thumbnail Grid Section - full width */}
-      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-2 w-full">
+      {/* Thumbnail Row Section - full width, items spaced out */}
+      <div className="flex flex-row flex-wrap justify-between items-center w-full gap-2">
         {images.map((image, index) => (
           <Card
             key={image.url + index}
             onClick={() => onSelectImage(image)}
             className={cn(
+              "w-20 h-20", // Fixed size for thumbnails (80x80px)
               "overflow-hidden cursor-pointer transition-all duration-200 ease-in-out hover:shadow-md",
               selectedImage.url === image.url
                 ? "ring-2 ring-primary ring-offset-2 shadow-xl"
                 : "ring-1 ring-border hover:ring-primary/50"
             )}
+            role="button"
+            aria-label={`Ver imagem ${index + 1} de ${productName}`}
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                onSelectImage(image);
+              }
+            }}
           >
             <CardContent className="p-0">
-              <div className="aspect-square relative w-full">
+              <div className="aspect-square relative w-full h-full">
                 <Image
                   src={image.url}
                   alt={image.alt || `${productName} - Thumbnail ${index + 1}`}
                   data-ai-hint={image.dataAiHint}
                   fill
                   className="object-cover"
-                  sizes="10vw" // Adjust if necessary, 10vw is a general small size
+                  sizes="80px" // Corresponds to w-20 h-20 fixed size
                 />
               </div>
             </CardContent>
