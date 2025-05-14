@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={inter.variable} suppressHydrationWarning> {/* Apply font variable class here */}
+    <html lang="pt-BR" className={inter.variable} suppressHydrationWarning>
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased" // font-sans will now use the CSS var via Tailwind config
       )}>
