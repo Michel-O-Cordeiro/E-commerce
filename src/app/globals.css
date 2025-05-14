@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif; /* Updated to use --font-inter */
-}
+/* The font-family is now handled by Tailwind's font-sans utility, configured in tailwind.config.ts to use --font-inter */
 
 @layer base {
   :root {

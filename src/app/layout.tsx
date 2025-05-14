@@ -4,7 +4,7 @@ import './globals.css';
 import { cn } from '@/lib/utils'; // For conditional class names
 
 const inter = Inter({
-  variable: '--font-inter', // Updated variable name
+  variable: '--font-inter', // This will be the name of the CSS variable
   subsets: ['latin'],
 });
 
@@ -19,10 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" className={inter.variable} suppressHydrationWarning> {/* Apply font variable class here */}
       <body className={cn(
-        "min-h-screen bg-background font-sans antialiased",
-        inter.variable // Apply Inter font variable
+        "min-h-screen bg-background font-sans antialiased" // font-sans will now use the CSS var via Tailwind config
       )}>
         {children}
       </body>
