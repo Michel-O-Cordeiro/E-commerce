@@ -1,10 +1,10 @@
 import type {Metadata} from 'next';
-import { Inter } from 'next/font/google'; // Using Inter as a standard Google Font
+import { Inter } from 'next/font/google';
 import './globals.css';
-import { cn } from '@/lib/utils'; // For conditional class names
+import { cn } from '@/lib/utils'; 
 
 const inter = Inter({
-  variable: '--font-inter', // This will be the name of the CSS variable
+  variable: '--font-inter', 
   subsets: ['latin'],
 });
 
@@ -22,9 +22,9 @@ export default function RootLayout({
     <html lang="pt-BR" className={inter.variable} suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased" // font-sans will now use the CSS var via Tailwind config
+          "min-h-screen bg-background font-sans antialiased"
         )}
-        suppressHydrationWarning // Added to specifically address body class mismatches
+        suppressHydrationWarning 
       >
         {children}
       </body>
