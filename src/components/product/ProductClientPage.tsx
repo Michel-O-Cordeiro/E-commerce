@@ -21,17 +21,17 @@ const FIFTEEN_MINUTES_MS = 15 * 60 * 1000;
 const FALLBACK_IMAGE: ProductImage = { url: 'https://placehold.co/600x600.png', alt: 'Imagem do produto indisponível', dataAiHint: 'placeholder product' };
 
 export default function ProductClientPage({ product }: ProductClientPageProps) {
-  // Helper to get ColorVariant object for a given color name
+  
   const getColorVariantByName = (name?: string): ColorVariant | undefined => {
     return product.variants.colors.find(c => c.name === name);
   };
 
-  // Helper to get images for a given color name
+  
   const getImagesForColorName = (name?: string): ProductImage[] => {
     return getColorVariantByName(name)?.images || [];
   };
 
-  // Initial selected color logic
+  
   const initialSelectedColorObject = getColorVariantByName(product.defaultSelectedColorName) || product.variants.colors[0] || ({} as ColorVariant);
   const [selectedColor, setSelectedColor] = useLocalStorage<ColorVariant>(
     `${product.id}_selectedColor`,
@@ -39,7 +39,7 @@ export default function ProductClientPage({ product }: ProductClientPageProps) {
     FIFTEEN_MINUTES_MS
   );
 
-  // Initial selected image logic (based on initial selected color)
+ 
   const initialImagesForDefaultColor = getImagesForColorName(initialSelectedColorObject.name);
   const initialImageForStorage = initialImagesForDefaultColor.length > 0 ? initialImagesForDefaultColor[0] : FALLBACK_IMAGE;
 
@@ -49,12 +49,12 @@ export default function ProductClientPage({ product }: ProductClientPageProps) {
     FIFTEEN_MINUTES_MS
   );
 
-  // Derived state: current images to display in the gallery based on selectedColor
+  
   const currentDisplayImages = useMemo(() => {
     return getImagesForColorName(selectedColor?.name);
   }, [selectedColor, product.variants.colors]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Effect to update selectedImage if it's not valid for the current selectedColor
+  
   useEffect(() => {
     const imagesForCurrentColor = getImagesForColorName(selectedColor?.name);
     if (imagesForCurrentColor.length > 0) {
@@ -67,8 +67,8 @@ export default function ProductClientPage({ product }: ProductClientPageProps) {
     } else {
       setSelectedImage(FALLBACK_IMAGE);
     }
-    // selectedImage is intentionally not a dependency to prevent infinite loops.
-    // This effect reacts to changes in selectedColor or the product's color variants.
+
+
   }, [selectedColor, product.variants.colors, setSelectedImage]); // eslint-disable-line react-hooks/exhaustive-deps
 
 
@@ -85,11 +85,11 @@ export default function ProductClientPage({ product }: ProductClientPageProps) {
     const newSelectedColorVariant = getColorVariantByName(colorName);
     if (newSelectedColorVariant) {
       setSelectedColor(newSelectedColorVariant);
-      // The useEffect above will handle updating selectedImage
+      
     }
   };
   
-  // Ensure the image passed to the gallery is valid for the current color set, or a fallback.
+
   const imageForGallery = currentDisplayImages.find(img => img.url === selectedImage?.url && img.alt === selectedImage?.alt)
                         || currentDisplayImages[0]
                         || FALLBACK_IMAGE;
