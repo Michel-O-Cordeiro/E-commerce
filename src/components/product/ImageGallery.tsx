@@ -19,8 +19,8 @@ export default function ImageGallery({
   productName,
 }: ImageGalleryProps) {
   return (
-    <div className="flex flex-col gap-4">
-      <Card className="overflow-hidden shadow-lg">
+    <div className="flex flex-col items-center gap-4">
+      <Card className="overflow-hidden shadow-lg w-full md:w-[30%]">
         <CardContent className="p-0">
           <div className="aspect-square relative w-full">
             <Image
@@ -30,12 +30,12 @@ export default function ImageGallery({
               fill
               className="object-cover"
               priority
-              sizes="100vw" // Updated for better scaling in new full-width layout
+              sizes="(max-width: 768px) 100vw, 30vw"
             />
           </div>
         </CardContent>
       </Card>
-      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-4 gap-2">
+      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-4 gap-2 w-full md:w-[30%]">
         {images.map((image, index) => (
           <Card
             key={image.url + index}
@@ -55,7 +55,7 @@ export default function ImageGallery({
                   data-ai-hint={image.dataAiHint}
                   fill
                   className="object-cover"
-                  sizes="20vw"
+                  sizes="10vw"
                 />
               </div>
             </CardContent>
