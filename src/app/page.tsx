@@ -17,7 +17,7 @@ const MOCK_PRODUCT: Product = {
         hex: '#000080',
         className: 'bg-blue-800',
         images: [
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Azul Marinho - Vista Lateral', dataAiHint: 'sneaker side' },
+          { url: 'https://i.ibb.co/pccsWkJ/Chat-GPT-Image-14-de-mai-de-2025-09-11-59.png', alt: 'Tênis Azul Marinho - Vista Lateral', dataAiHint: 'sneaker side' },
           { url: 'https://placehold.co/600x600.png', alt: 'Tênis Azul Marinho - Vista Superior', dataAiHint: 'sneaker top' },
           { url: 'https://placehold.co/600x600.png', alt: 'Tênis Azul Marinho - Vista Traseira', dataAiHint: 'sneaker back' },
           { url: 'https://placehold.co/600x600.png', alt: 'Tênis Azul Marinho - Vista Frontal', dataAiHint: 'sneaker front' },
