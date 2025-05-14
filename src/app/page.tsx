@@ -3,32 +3,79 @@ import type { Product } from '@/lib/types';
 import { Toaster } from "@/components/ui/toaster"; // Import Toaster
 
 // Mock data for the product
-// This would typically come from an API or database
 const MOCK_PRODUCT: Product = {
-  id: 'P001',
-  name: 'Camiseta Premium Conforto Total',
-  price: 79.90,
-  images: [
-    { url: 'https://placehold.co/600x600.png', alt: 'Camiseta Vista Frontal', dataAiHint: 'tshirt front' },
-    { url: 'https://placehold.co/600x600.png', alt: 'Camiseta Vista Traseira', dataAiHint: 'tshirt back' },
-    { url: 'https://placehold.co/600x600.png', alt: 'Detalhe do Tecido da Camiseta', dataAiHint: 'tshirt fabric detail' },
-    { url: 'https://placehold.co/600x600.png', alt: 'Modelo Vestindo Camiseta', dataAiHint: 'tshirt lifestyle model' },
-    { url: 'https://placehold.co/600x600.png', alt: 'Camiseta Dobrada', dataAiHint: 'tshirt folded' },
-  ],
+  id: 'SNK001',
+  name: 'Tênis Esportivo Urbano Pro',
+  price: 279.90,
   description:
-    'Experimente o máximo de conforto e estilo com nossa Camiseta Premium. Feita com o mais puro algodão respirável, esta camiseta foi desenhada para ser usada o dia todo. Disponível em uma variedade de tamanhos e cores para combinar perfeitamente com seu estilo. Ideal para qualquer ocasião, seja casual ou um pouco mais arrumada.',
+    'Conquiste as ruas com o Tênis Esportivo Urbano Pro. Design moderno, conforto superior e durabilidade para o seu dia a dia. Perfeito para qualquer aventura urbana, combinando estilo e performance.',
   variants: {
-    sizes: ['P', 'M', 'G', 'GG', 'XG'],
+    sizes: ['38', '39', '40', '41', '42', '43'],
     colors: [
-      { name: 'Azul Marinho', hex: '#000080', className: 'bg-blue-800' },
-      { name: 'Verde Floresta', hex: '#228B22', className: 'bg-green-700' },
-      { name: 'Cinza Mescla', hex: '#808080', className: 'bg-gray-500' },
-      { name: 'Branco Clássico', hex: '#FFFFFF', className: 'bg-white border border-border' },
-      { name: 'Preto Intenso', hex: '#000000', className: 'bg-black' },
+      {
+        name: 'Azul Marinho',
+        hex: '#000080',
+        className: 'bg-blue-800',
+        images: [
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Azul Marinho - Vista Lateral', dataAiHint: 'sneaker side' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Azul Marinho - Vista Superior', dataAiHint: 'sneaker top' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Azul Marinho - Vista Traseira', dataAiHint: 'sneaker back' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Azul Marinho - Vista Frontal', dataAiHint: 'sneaker front' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Par de Tênis Azul Marinho', dataAiHint: 'sneaker pair' },
+        ],
+      },
+      {
+        name: 'Verde Floresta',
+        hex: '#228B22',
+        className: 'bg-green-700',
+        images: [
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Verde Floresta - Vista Lateral', dataAiHint: 'sneaker side' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Verde Floresta - Vista Superior', dataAiHint: 'sneaker top' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Verde Floresta - Vista Traseira', dataAiHint: 'sneaker back' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Verde Floresta - Vista Frontal', dataAiHint: 'sneaker front' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Par de Tênis Verde Floresta', dataAiHint: 'sneaker pair' },
+        ],
+      },
+      {
+        name: 'Cinza Mescla',
+        hex: '#808080',
+        className: 'bg-gray-500',
+        images: [
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Cinza Mescla - Vista Lateral', dataAiHint: 'sneaker side' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Cinza Mescla - Vista Superior', dataAiHint: 'sneaker top' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Cinza Mescla - Vista Traseira', dataAiHint: 'sneaker back' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Cinza Mescla - Vista Frontal', dataAiHint: 'sneaker front' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Par de Tênis Cinza Mescla', dataAiHint: 'sneaker pair' },
+        ],
+      },
+      {
+        name: 'Branco Clássico',
+        hex: '#FFFFFF',
+        className: 'bg-white border border-border',
+        images: [
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Branco Clássico - Vista Lateral', dataAiHint: 'sneaker side' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Branco Clássico - Vista Superior', dataAiHint: 'sneaker top' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Branco Clássico - Vista Traseira', dataAiHint: 'sneaker back' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Branco Clássico - Vista Frontal', dataAiHint: 'sneaker front' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Par de Tênis Branco Clássico', dataAiHint: 'sneaker pair' },
+        ],
+      },
+      {
+        name: 'Preto Intenso',
+        hex: '#000000',
+        className: 'bg-black',
+        images: [
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Preto Intenso - Vista Lateral', dataAiHint: 'sneaker side' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Preto Intenso - Vista Superior', dataAiHint: 'sneaker top' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Preto Intenso - Vista Traseira', dataAiHint: 'sneaker back' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Preto Intenso - Vista Frontal', dataAiHint: 'sneaker front' },
+          { url: 'https://placehold.co/600x600.png', alt: 'Par de Tênis Preto Intenso', dataAiHint: 'sneaker pair' },
+        ],
+      },
     ],
   },
   defaultSelectedColorName: 'Azul Marinho',
-  defaultSelectedSize: 'M',
+  defaultSelectedSize: '40',
 };
 
 export default function Home() {
