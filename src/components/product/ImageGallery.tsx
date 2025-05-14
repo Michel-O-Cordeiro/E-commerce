@@ -30,7 +30,7 @@ export default function ImageGallery({
               fill
               className="object-cover"
               priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 35vw"
+              sizes="100vw" // Updated for better scaling in new full-width layout
             />
           </div>
         </CardContent>

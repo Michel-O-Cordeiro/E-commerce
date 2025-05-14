@@ -50,9 +50,9 @@ export default function ProductClientPage({ product }: ProductClientPageProps) {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+      <div className="flex flex-col gap-8"> {/* Changed from lg:flex-row and updated gap */}
         {/* Image Gallery Section */}
-        <div className="lg:w-2/5">
+        <div className="w-full"> {/* Changed from lg:w-2/5 */}
           <ImageGallery
             images={product.images}
             selectedImage={selectedImage.url ? selectedImage : initialImage} // Ensure selectedImage has a url
@@ -62,7 +62,7 @@ export default function ProductClientPage({ product }: ProductClientPageProps) {
         </div>
 
         {/* Product Details Section */}
-        <div className="lg:w-3/5 flex flex-col">
+        <div className="w-full flex flex-col"> {/* Changed from lg:w-3/5 */}
           <Card className="flex-grow shadow-lg">
             <CardHeader>
               <CardTitle className="text-3xl lg:text-4xl font-bold">
