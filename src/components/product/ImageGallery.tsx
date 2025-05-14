@@ -19,23 +19,28 @@ export default function ImageGallery({
   productName,
 }: ImageGalleryProps) {
   return (
-    <div className="flex flex-col items-center gap-4">
-      <Card className="overflow-hidden shadow-lg w-full md:w-[30%]">
-        <CardContent className="p-0">
-          <div className="aspect-square relative w-full">
-            <Image
-              src={selectedImage.url}
-              alt={selectedImage.alt || `${productName} - Main View`}
-              data-ai-hint={selectedImage.dataAiHint}
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, 30vw"
-            />
-          </div>
-        </CardContent>
-      </Card>
-      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-4 gap-2 w-full md:w-[30%]">
+    <div className="w-full flex flex-col items-center gap-4">
+      {/* Main Image Section - centered and 30% width on medium+ screens */}
+      <div className="w-full md:w-[30%]">
+        <Card className="overflow-hidden shadow-lg w-full">
+          <CardContent className="p-0">
+            <div className="aspect-square relative w-full">
+              <Image
+                src={selectedImage.url}
+                alt={selectedImage.alt || `${productName} - Main View`}
+                data-ai-hint={selectedImage.dataAiHint}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 30vw"
+              />
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Thumbnail Grid Section - full width */}
+      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-2 w-full">
         {images.map((image, index) => (
           <Card
             key={image.url + index}
@@ -55,7 +60,7 @@ export default function ImageGallery({
                   data-ai-hint={image.dataAiHint}
                   fill
                   className="object-cover"
-                  sizes="10vw"
+                  sizes="10vw" // Adjust if necessary, 10vw is a general small size
                 />
               </div>
             </CardContent>
