@@ -21,7 +21,6 @@ export default function ImageGallery({
 }: ImageGalleryProps) {
   return (
     <div className="w-full flex flex-col items-center gap-4">
-      {/* Main Image Section - centered and 30% width on medium+ screens */}
       <div className="w-full md:w-[30%] mx-auto">
         <Card className="overflow-hidden shadow-lg w-full">
           <CardContent className="p-0">
@@ -40,14 +39,14 @@ export default function ImageGallery({
         </Card>
       </div>
 
-      {/* Thumbnail Row Section - full width, items spaced out */}
+      
       <div className="flex flex-row flex-wrap justify-between items-center w-full gap-2">
         {images.map((image, index) => (
           <Card
             key={image.url + index}
             onClick={() => onSelectImage(image)}
             className={cn(
-              "w-20 h-20", // Fixed size for thumbnails (80x80px)
+              "w-20 h-20", 
               "overflow-hidden cursor-pointer transition-all duration-200 ease-in-out hover:shadow-md",
               selectedImage.url === image.url
                 ? "ring-2 ring-primary ring-offset-2 shadow-xl"
@@ -70,7 +69,7 @@ export default function ImageGallery({
                   data-ai-hint={image.dataAiHint}
                   fill
                   className="object-contain"
-                  sizes="80px" // Corresponds to w-20 h-20 fixed size
+                  sizes="80px" 
                 />
               </div>
             </CardContent>
