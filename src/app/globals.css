@@ -2,37 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* The font-family is now handled by Tailwind's font-sans utility, configured in tailwind.config.ts to use --font-inter */
+
 
 @layer base {
   :root {
-    --background: 210 40% 98%; /* #f9fafb - Soft neutral background */
-    --foreground: 215 14% 28%; /* #374151 - Dark gray for text */
+    --background: 210 40% 98%; 
+    --foreground: 215 14% 28%; 
 
-    --card: 0 0% 100%; /* White cards for contrast */
+    --card: 0 0% 100%; 
     --card-foreground: 215 14% 28%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 215 14% 28%;
 
-    --primary: 172 80% 40%; /* #14b8a6 - Teal for interactive elements */
-    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --primary: 172 80% 40%; 
+    --primary-foreground: 0 0% 100%; 
 
-    --secondary: 210 30% 92%; /* Light gray */
-    --secondary-foreground: 215 14% 22%; /* Darker gray for secondary text */
+    --secondary: 210 30% 92%; 
+    --secondary-foreground: 215 14% 22%; 
 
-    --muted: 210 40% 95%; /* Lighter gray */
-    --muted-foreground: 215 10% 45%; /* Muted text color */
+    --muted: 210 40% 95%; 
+    --muted-foreground: 215 10% 45%; 
 
-    --accent: 172 75% 45%; /* Slightly adjusted Teal for accents */
+    --accent: 172 75% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 20% 88%; /* Softer border color */
-    --input: 210 30% 94%; /* Light input background */
-    --ring: 172 80% 40%; /* Teal for focus rings */
+    --border: 210 20% 88%; 
+    --input: 210 30% 94%; 
+    --ring: 172 80% 40%; 
 
     --radius: 0.5rem;
 
@@ -42,7 +42,6 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
 
-    /* Sidebar specific colors - can be adjusted if sidebar is used, otherwise defaults are fine */
     --sidebar-background: 210 40% 98%;
     --sidebar-foreground: 215 14% 28%;
     --sidebar-primary: 172 80% 40%;
@@ -54,25 +53,25 @@
   }
 
   .dark {
-    --background: 215 28% 17%; /* Dark gray background */
-    --foreground: 210 40% 98%; /* Light gray/white text */
+    --background: 215 28% 17%;
+    --foreground: 210 40% 98%; 
 
-    --card: 215 28% 12%; /* Darker card background */
+    --card: 215 28% 12%; 
     --card-foreground: 210 40% 98%;
 
     --popover: 215 28% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 172 70% 50%; /* Teal, slightly brighter for dark mode */
-    --primary-foreground: 215 20% 15%; /* Dark text on primary */
+    --primary: 172 70% 50%; 
+    --primary-foreground: 215 20% 15%; 
 
-    --secondary: 215 25% 25%; /* Dark mode secondary */
+    --secondary: 215 25% 25%; 
     --secondary-foreground: 210 40% 90%;
 
     --muted: 215 25% 22%;
     --muted-foreground: 210 30% 70%;
 
-    --accent: 172 70% 55%; /* Accent for dark mode */
+    --accent: 172 70% 55%; 
     --accent-foreground: 215 20% 15%;
 
     --destructive: 0 62.8% 30.6%;
@@ -88,7 +87,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
 
-    /* Sidebar specific colors for dark mode */
+
     --sidebar-background: 215 28% 12%;
     --sidebar-foreground: 210 40% 98%;
     --sidebar-primary: 172 70% 50%;
