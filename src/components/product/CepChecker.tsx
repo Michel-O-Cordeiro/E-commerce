@@ -33,7 +33,7 @@ export default function CepChecker({
   const handleCepInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const formattedCep = formatCep(e.target.value);
     onCepChange(formattedCep);
-    if (address || error) { // Clear previous address/error on new input
+    if (address || error) { 
       onAddressChange(null);
       setError(null);
     }
