@@ -31,7 +31,7 @@ export default function ImageGallery({
                 alt={selectedImage.alt || `${productName} - Main View`}
                 data-ai-hint={selectedImage.dataAiHint}
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
                 sizes="(max-width: 768px) 100vw, 30vw"
               />
@@ -69,7 +69,7 @@ export default function ImageGallery({
                   alt={image.alt || `${productName} - Thumbnail ${index + 1}`}
                   data-ai-hint={image.dataAiHint}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="80px" // Corresponds to w-20 h-20 fixed size
                 />
               </div>

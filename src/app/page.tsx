@@ -1,75 +1,51 @@
 import ProductClientPage from '@/components/product/ProductClientPage';
 import type { Product } from '@/lib/types';
-import { Toaster } from "@/components/ui/toaster"; // Import Toaster
+import { Toaster } from "@/components/ui/toaster"; 
 
-// Mock data for the product
+
 const MOCK_PRODUCT: Product = {
   id: 'SNK001',
-  name: 'Tênis Esportivo Urbano Pro',
+  name: 'Chuteira Futsal Nike Beco 2 - Adulto',
   price: 279.90,
   description:
-    'Conquiste as ruas com o Tênis Esportivo Urbano Pro. Design moderno, conforto superior e durabilidade para o seu dia a dia. Perfeito para qualquer aventura urbana, combinando estilo e performance.',
+    'Conquiste os gramados com o Chuteira Futsal Nike Beco 2 - Adulto. Design moderno, conforto superior e durabilidade. Perfeito para o futebol, combinando estilo e performance.',
   variants: {
     sizes: ['38', '39', '40', '41', '42', '43'],
     colors: [
       {
-        name: 'Azul Marinho',
-        hex: '#000080',
-        className: 'bg-blue-800',
+        name: 'Vermelho',
+        hex: '#dd1515',
+        className: 'bg-red-800',
         images: [
-          { url: 'https://i.ibb.co/pccsWkJ/Chat-GPT-Image-14-de-mai-de-2025-09-11-59.png', alt: 'Tênis Azul Marinho - Vista Lateral', dataAiHint: 'sneaker side' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Azul Marinho - Vista Superior', dataAiHint: 'sneaker top' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Azul Marinho - Vista Traseira', dataAiHint: 'sneaker back' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Azul Marinho - Vista Frontal', dataAiHint: 'sneaker front' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Par de Tênis Azul Marinho', dataAiHint: 'sneaker pair' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/8295512VA9.jpg', alt: 'Tênis Azul Marinho - Vista Lateral', dataAiHint: 'sneaker side' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/8295512VA4.jpg', alt: 'Tênis Azul Marinho - Vista Superior', dataAiHint: 'sneaker top' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/8295512VA3.jpg', alt: 'Tênis Azul Marinho - Vista Traseira', dataAiHint: 'sneaker back' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/8295512VA1.jpg', alt: 'Tênis Azul Marinho - Vista Frontal', dataAiHint: 'sneaker front' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/8295512VA5.jpg', alt: 'Par de Tênis Azul Marinho', dataAiHint: 'sneaker pair' },
         ],
       },
       {
-        name: 'Verde Floresta',
-        hex: '#228B22',
-        className: 'bg-green-700',
-        images: [
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Verde Floresta - Vista Lateral', dataAiHint: 'sneaker side' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Verde Floresta - Vista Superior', dataAiHint: 'sneaker top' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Verde Floresta - Vista Traseira', dataAiHint: 'sneaker back' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Verde Floresta - Vista Frontal', dataAiHint: 'sneaker front' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Par de Tênis Verde Floresta', dataAiHint: 'sneaker pair' },
-        ],
-      },
-      {
-        name: 'Cinza Mescla',
-        hex: '#808080',
-        className: 'bg-gray-500',
-        images: [
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Cinza Mescla - Vista Lateral', dataAiHint: 'sneaker side' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Cinza Mescla - Vista Superior', dataAiHint: 'sneaker top' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Cinza Mescla - Vista Traseira', dataAiHint: 'sneaker back' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Cinza Mescla - Vista Frontal', dataAiHint: 'sneaker front' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Par de Tênis Cinza Mescla', dataAiHint: 'sneaker pair' },
-        ],
-      },
-      {
-        name: 'Branco Clássico',
-        hex: '#FFFFFF',
+        name: 'Azul Claro',
+        hex: '#b7ebee',
         className: 'bg-white border border-border',
         images: [
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Branco Clássico - Vista Lateral', dataAiHint: 'sneaker side' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Branco Clássico - Vista Superior', dataAiHint: 'sneaker top' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Branco Clássico - Vista Traseira', dataAiHint: 'sneaker back' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Branco Clássico - Vista Frontal', dataAiHint: 'sneaker front' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Par de Tênis Branco Clássico', dataAiHint: 'sneaker pair' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/829551T8A20.jpg', alt: 'Tênis Branco Clássico - Vista Lateral', dataAiHint: 'sneaker side' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/829551T8A24.jpg', alt: 'Tênis Branco Clássico - Vista Superior', dataAiHint: 'sneaker top' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/829551T8A23.jpg', alt: 'Tênis Branco Clássico - Vista Traseira', dataAiHint: 'sneaker back' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/829551T8A21.jpg', alt: 'Tênis Branco Clássico - Vista Frontal', dataAiHint: 'sneaker front' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/829551T8A25.jpg', alt: 'Par de Tênis Branco Clássico', dataAiHint: 'sneaker pair' },
         ],
       },
       {
-        name: 'Preto Intenso',
+        name: 'Preto',
         hex: '#000000',
         className: 'bg-black',
         images: [
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Preto Intenso - Vista Lateral', dataAiHint: 'sneaker side' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Preto Intenso - Vista Superior', dataAiHint: 'sneaker top' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Preto Intenso - Vista Traseira', dataAiHint: 'sneaker back' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Tênis Preto Intenso - Vista Frontal', dataAiHint: 'sneaker front' },
-          { url: 'https://placehold.co/600x600.png', alt: 'Par de Tênis Preto Intenso', dataAiHint: 'sneaker pair' },
+          { url: 'https://imgcentauro-a.akamaihd.net/800x800/8295512KA11.jpg', alt: 'Chuteira Futsal Nike Beco 2 - Adulto - Vista Lateral', dataAiHint: 'sneaker side' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/8295512KA15.jpg', alt: 'Chuteira Futsal Nike Beco 2 - Adulto - Vista Superior', dataAiHint: 'sneaker top' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/8295512KA14.jpg', alt: 'Chuteira Futsal Nike Beco 2 - Adulto - Vista Traseira', dataAiHint: 'sneaker back' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/8295512KA12.jpg', alt: 'Chuteira Futsal Nike Beco 2 - Adulto - Vista Frontal', dataAiHint: 'sneaker front' },
+          { url: 'https://imgcentauro-a.akamaihd.net/1024x1024/8295512KA16.jpg', alt: 'Par de Chuteira Futsal Nike Beco 2 - Adulto', dataAiHint: 'sneaker pair' },
         ],
       },
     ],

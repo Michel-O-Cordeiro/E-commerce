@@ -2,7 +2,7 @@
 
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Shirt } from "lucide-react";
+import { Ruler } from "lucide-react";
 
 interface SizeSelectorProps {
   sizes: string[];
@@ -20,7 +20,7 @@ export default function SizeSelector({
   return (
     <div className="space-y-3">
       <Label htmlFor="size-selector" className="text-base font-semibold flex items-center gap-2">
-        <Shirt className="w-5 h-5 text-primary" />
+        <Ruler className="w-5 h-5 text-primary" />
         Tamanho: <span className="text-muted-foreground font-normal">{selectedSize}</span>
       </Label>
       <RadioGroup
